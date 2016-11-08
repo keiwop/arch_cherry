@@ -1,0 +1,1341 @@
+--- decompiled/dsdt.dsl	2016-09-08 23:20:08.587530555 +0200
++++ work/dsdt.dsl	2016-09-09 00:25:26.074493711 +0200
+@@ -5,7 +5,7 @@
+  * 
+  * Disassembling to symbolic ASL+ operators
+  *
+- * Disassembly of orig/dsdt.dat, Thu Sep  8 23:20:08 2016
++ * Disassembly of orig/dsdt.aml, Thu Sep  8 22:39:07 2016
+  *
+  * Original Table Header:
+  *     Signature        "DSDT"
+@@ -2269,7 +2269,7 @@
+                 }
+             }
+ 
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (UBUF, ResourceTemplate ()
+                 {
+@@ -4033,7 +4033,7 @@
+                 Return (Zero)
+             }
+ 
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (ABUF, ResourceTemplate ()
+                 {
+@@ -7008,7 +7008,7 @@
+ 
+                 Name (_S4W, 0x02)  // _S4W: S4 Device Wake State
+                 Name (_S0W, 0x02)  // _S0W: S0 Device Wake State
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (RBUF, ResourceTemplate ()
+                     {
+@@ -7088,7 +7088,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (NAM, Buffer (0x14)
+                     {
+@@ -8271,7 +8271,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (UBUF, ResourceTemplate ()
+                     {
+@@ -8321,7 +8321,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (BBUF, ResourceTemplate ()
+                     {
+@@ -8371,7 +8371,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (BBUF, ResourceTemplate ()
+                     {
+@@ -8426,7 +8426,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (BBUF, ResourceTemplate ()
+                     {
+@@ -8463,7 +8463,7 @@
+                 Name (_HID, "INT33E1")  // _HID: Hardware ID
+                 Name (UART, Zero)
+                 Name (_S0W, 0x02)  // _S0W: S0 Device Wake State
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (UBUF, ResourceTemplate ()
+                     {
+@@ -8664,7 +8664,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (UBUF, ResourceTemplate ()
+                     {
+@@ -8699,7 +8699,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (BBUF, ResourceTemplate ()
+                     {
+@@ -8746,7 +8746,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (ABUF, ResourceTemplate ()
+                     {
+@@ -8875,7 +8875,7 @@
+             {
+                 Name (_HID, "AUTH2750" /* AuthenTec AES2750 */)  // _HID: Hardware ID
+                 Name (_DDN, "AuthenTec AES2750")  // _DDN: DOS Device Name
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (UBUF, ResourceTemplate ()
+                     {
+@@ -9317,7 +9317,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -9459,7 +9459,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -9634,7 +9634,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -9854,7 +9854,7 @@
+                     P12P, 
+                     CLK4
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -10113,7 +10113,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -10539,7 +10539,7 @@
+                     One, 
+                     0x0124F800
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -10579,24 +10579,24 @@
+ 
+                 Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+                 {
+-                    Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
+-                    Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
++                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
++                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                     If ((Arg0 == ToUUID ("a9240c44-f032-454d-80e5-7aeed80e9551")))
+                     {
+                         CreateByteField (Arg3, Zero, FARG)
+                         While (One)
+                         {
+-                            _T_0 = Arg2
+-                            If ((_T_0 == 0x03))
++                            T_0 = Arg2
++                            If ((T_0 == 0x03))
+                             {
+                                 While (One)
+                                 {
+-                                    _T_1 = Arg3
+-                                    If ((_T_1 == Zero))
++                                    T_1 = Arg3
++                                    If ((T_1 == Zero))
+                                     {
+                                         Return (0x1D)
+                                     }
+-                                    ElseIf ((_T_1 == 0x04))
++                                    ElseIf ((T_1 == 0x04))
+                                     {
+                                         Return (Buffer (0x54)
+                                         {
+@@ -10613,7 +10613,7 @@
+                                             /* 0050 */  0x00, 0x20, 0x01, 0x00                           /* . .. */
+                                         })
+                                     }
+-                                    ElseIf ((_T_1 == 0x02))
++                                    ElseIf ((T_1 == 0x02))
+                                     {
+                                         Return (Buffer (0xF6)
+                                         {
+@@ -10650,7 +10650,7 @@
+                                             /* 00F0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00               /* ...... */
+                                         })
+                                     }
+-                                    ElseIf ((_T_1 == 0x03))
++                                    ElseIf ((T_1 == 0x03))
+                                     {
+                                         Return (Buffer (0x42)
+                                         {
+@@ -10693,7 +10693,7 @@
+                 {
+                     CLK3
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -10970,7 +10970,7 @@
+                 {
+                     CLK3
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -11247,7 +11247,7 @@
+                 {
+                     CLK3
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -11646,7 +11646,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -11867,7 +11867,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -12174,7 +12174,7 @@
+                 Name (_CID, "BOSC0200")  // _CID: Compatible ID
+                 Name (_DDN, "Accelerometer")  // _DDN: DOS Device Name
+                 Name (_UID, One)  // _UID: Unique ID
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (RBUF, ResourceTemplate ()
+                     {
+@@ -12229,7 +12229,7 @@
+                     Return (0x0F)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (RBUF, ResourceTemplate ()
+                     {
+@@ -12294,7 +12294,7 @@
+                     Return (0x0F)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -12335,7 +12335,7 @@
+                     Return (0x0F)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (RBUF, ResourceTemplate ()
+                     {
+@@ -12364,7 +12364,7 @@
+                     Return (0x0F)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (RBUF, ResourceTemplate ()
+                     {
+@@ -12560,7 +12560,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -12672,7 +12672,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -12959,7 +12959,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -13149,7 +13149,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -13436,7 +13436,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -13654,7 +13654,7 @@
+                     }
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -13949,7 +13949,7 @@
+                     }
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -14265,7 +14265,7 @@
+                 {
+                     CLK5
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -14536,7 +14536,7 @@
+                     Sleep (0x78)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -14590,7 +14590,7 @@
+                 {
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -14651,7 +14651,7 @@
+                     Sleep (0x78)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -14677,20 +14677,20 @@
+ 
+                 Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+                 {
+-                    Name (_T_1, Zero)  // _T_x: Emitted by ASL Compiler
+-                    Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
++                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
++                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                     Debug = "Method _DSM begin"
+                     If ((Arg0 == ToUUID ("3cdff6f7-4267-4555-ad05-b30a3d8938de") /* HID I2C Device */))
+                     {
+                         While (One)
+                         {
+-                            _T_0 = ToInteger (Arg2)
+-                            If ((_T_0 == Zero))
++                            T_0 = ToInteger (Arg2)
++                            If ((T_0 == Zero))
+                             {
+                                 While (One)
+                                 {
+-                                    _T_1 = ToInteger (Arg1)
+-                                    If ((_T_1 == One))
++                                    T_1 = ToInteger (Arg1)
++                                    If ((T_1 == One))
+                                     {
+                                         Debug = "Method _DSM Function Query"
+                                         Return (Buffer (One)
+@@ -14709,7 +14709,7 @@
+                                     Break
+                                 }
+                             }
+-                            ElseIf ((_T_0 == One))
++                            ElseIf ((T_0 == One))
+                             {
+                                 Debug = "Method _DSM Function HID"
+                                 Return (Zero)
+@@ -14892,7 +14892,7 @@
+                     Return (0x0F)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (WBUF, ResourceTemplate ()
+                     {
+@@ -14961,7 +14961,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -15115,7 +15115,7 @@
+                 Name (_CID, "10EC5640" /* Realtek I2S Audio Codec */)  // _CID: Compatible ID
+                 Name (_DDN, "ALC5642")  // _DDN: DOS Device Name
+                 Name (_UID, One)  // _UID: Unique ID
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -15163,7 +15163,7 @@
+                     0x14, 
+                     0xB3
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -15242,7 +15242,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (RBUF, ResourceTemplate ()
+                     {
+@@ -15407,7 +15407,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -16046,7 +16046,7 @@
+                 Name (_CID, "VIBR22A8")  // _CID: Compatible ID
+                 Name (_DDN, "Intel(R) Vibra Driver - VIB8601")  // _DDN: DOS Device Name
+                 Name (_UID, One)  // _UID: Unique ID
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (RBUF, ResourceTemplate ()
+                     {
+@@ -16101,7 +16101,7 @@
+                 GPO2, 
+                 ^I2C2.RTEK
+             })
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -16155,7 +16155,7 @@
+                 GPO2, 
+                 ^I2C2.RTEK
+             })
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -16211,7 +16211,7 @@
+             Name (_CID, "HAD022A8")  // _CID: Compatible ID
+             Name (_DDN, "Intel(R) HDMI Audio Driver - HAD")  // _DDN: DOS Device Name
+             Name (_UID, One)  // _UID: Unique ID
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -16523,17 +16523,17 @@
+ 
+             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+             {
+-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
++                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                 If (((Arg0 == ToUUID ("ad27b3f7-13af-4fa3-93c9-eefd1f9d6ac7")) && (PAVP != Zero)))
+                 {
+                     While (One)
+                     {
+-                        _T_0 = Arg2
+-                        If ((_T_0 == Zero))
++                        T_0 = Arg2
++                        If ((T_0 == Zero))
+                         {
+                             Return (0x03)
+                         }
+-                        ElseIf ((_T_0 == One))
++                        ElseIf ((T_0 == One))
+                         {
+                             Return (PAVB) /* \PAVB */
+                         }
+@@ -16580,7 +16580,7 @@
+ 
+             Name (_S4W, 0x02)  // _S4W: S4 Device Wake State
+             Name (_S0W, 0x02)  // _S0W: S0 Device Wake State
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -16651,7 +16651,7 @@
+ 
+             Name (_S4W, 0x02)  // _S4W: S4 Device Wake State
+             Name (_S0W, 0x02)  // _S0W: S0 Device Wake State
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -19229,7 +19229,7 @@
+ 
+             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+             {
+-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
++                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                 If ((Arg0 == ToUUID ("1730e71d-e5dd-4a34-be57-4d76b6a2fe37")))
+                 {
+                     If ((Arg2 == Zero))
+@@ -19251,14 +19251,14 @@
+                     {
+                         While (One)
+                         {
+-                            _T_0 = DerefOf (Arg3 [Zero])
+-                            If ((_T_0 == Zero))
++                            T_0 = DerefOf (Arg3 [Zero])
++                            If ((T_0 == Zero))
+                             {
+                                 ^^HIDD.HPEM (0x1B)
+                             }
+-                            ElseIf ((_T_0 == One)) {}
+-                            ElseIf ((_T_0 == 0x02)) {}
+-                            ElseIf ((_T_0 == 0x03)) {}
++                            ElseIf ((T_0 == One)) {}
++                            ElseIf ((T_0 == 0x02)) {}
++                            ElseIf ((T_0 == 0x03)) {}
+                             Break
+                         }
+ 
+@@ -19706,6 +19706,7 @@
+                         OSYS = 0x07DF
+                     }
+                 }
++                OSYS = 0x07DF
+             }
+ 
+             Method (NHPG, 0, Serialized)
+@@ -19774,7 +19775,7 @@
+                 }
+             }
+ 
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -19798,7 +19799,7 @@
+                 }
+             }
+ 
+-            Method (_AEI, 0, NotSerialized)  // _AEI: ACPI Event Interrupts
++            Method (_AEI, 0, Serialized)  // _AEI: ACPI Event Interrupts
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -19851,7 +19852,7 @@
+             {
+                 GPO0
+             })
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -19885,7 +19886,7 @@
+             Name (_CID, "INT33FF")  // _CID: Compatible ID
+             Name (_DDN, "General Purpose Input/Output (GPIO) controller - SOUTHWEST")  // _DDN: DOS Device Name
+             Name (_UID, One)  // _UID: Unique ID
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -20015,7 +20016,7 @@
+             {
+                 MBID
+             })
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -20080,7 +20081,7 @@
+                 USBE,   32
+             }
+ 
+-            Method (_AEI, 0, NotSerialized)  // _AEI: ACPI Event Interrupts
++            Method (_AEI, 0, Serialized)  // _AEI: ACPI Event Interrupts
+             {
+                 Name (CBUF, ResourceTemplate ()
+                 {
+@@ -20228,7 +20229,7 @@
+             Name (_CID, "INT33FF")  // _CID: Compatible ID
+             Name (_DDN, "General Purpose Input/Output (GPIO) controller - EAST")  // _DDN: DOS Device Name
+             Name (_UID, 0x03)  // _UID: Unique ID
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -20277,7 +20278,7 @@
+                 WLD3,   1
+             }
+ 
+-            Method (_AEI, 0, NotSerialized)  // _AEI: ACPI Event Interrupts
++            Method (_AEI, 0, Serialized)  // _AEI: ACPI Event Interrupts
+             {
+                 Name (FBUF, ResourceTemplate ()
+                 {
+@@ -20318,7 +20319,7 @@
+             Name (_CID, "INT33FF")  // _CID: Compatible ID
+             Name (_DDN, "General Purpose Input/Output (GPIO) controller - SOUTHEAST")  // _DDN: DOS Device Name
+             Name (_UID, 0x04)  // _UID: Unique ID
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -20339,7 +20340,7 @@
+                 Return (0x0F)
+             }
+ 
+-            Method (_AEI, 0, NotSerialized)  // _AEI: ACPI Event Interrupts
++            Method (_AEI, 0, Serialized)  // _AEI: ACPI Event Interrupts
+             {
+                 Name (CBUF, ResourceTemplate ()
+                 {
+@@ -20367,6 +20368,7 @@
+                 {
+                     Return (WBUF) /* \_SB_.GPO3._AEI.WBUF */
+                 }
++                Return (WBUF) /* \_SB_.GPO3._AEI.WBUF */
+             }
+ 
+             Method (_E01, 0, NotSerialized)  // _Exx: Edge-Triggered GPE
+@@ -20374,7 +20376,7 @@
+                 ADBG ("BINTR")
+                 If ((BDID == 0x08))
+                 {
+-                    If (CondRefOf (\_SB.PCI0.I2C7.BATC, Local1))
++                    If (CondRefOf (\_SB.PCI0.I2C7.BATC))
+                     {
+                         Local0 = ^^PCI0.I2C7.BATC.INTF ()
+                         ADBG (Local0)
+@@ -20394,7 +20396,7 @@
+                 }
+                 ElseIf ((^^PCI0.I2C1.AVBL == One))
+                 {
+-                    If (CondRefOf (\_SB.PCI0.I2C1.BATC, Local1))
++                    If (CondRefOf (\_SB.PCI0.I2C1.BATC))
+                     {
+                         Local0 = ^^PCI0.I2C1.BATC.INTF ()
+                         ADBG (Local0)
+@@ -20411,7 +20413,7 @@
+                 ADBG ("BINTR")
+                 If ((^^PCI0.I2C1.AVBL == One))
+                 {
+-                    If (CondRefOf (\_SB.PCI0.I2C1.BATC, Local1))
++                    If (CondRefOf (\_SB.PCI0.I2C1.BATC))
+                     {
+                         Local0 = ^^PCI0.I2C1.BATC.INTF ()
+                         ADBG (Local0)
+@@ -20472,7 +20474,7 @@
+             Name (_CID, "INT33FF")  // _CID: Compatible ID
+             Name (_DDN, "General Purpose Input/Output (GPIO) controller - GPIO VIRTUAL")  // _DDN: DOS Device Name
+             Name (_UID, 0x05)  // _UID: Unique ID
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -20500,7 +20502,7 @@
+                 }
+             }
+ 
+-            Method (_AEI, 0, NotSerialized)  // _AEI: ACPI Event Interrupts
++            Method (_AEI, 0, Serialized)  // _AEI: ACPI Event Interrupts
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -20515,6 +20517,7 @@
+             }
+ 
+             Name (AVBL, Zero)
++/*
+             Method (_REG, 2, NotSerialized)  // _REG: Region Availability
+             {
+                 If ((Arg0 == 0x08))
+@@ -20522,7 +20525,7 @@
+                     AVBL = Arg1
+                 }
+             }
+-
++*/
+             Method (_L06, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
+             {
+                 If ((XHCI != Zero))
+@@ -20550,7 +20553,6 @@
+                 If ((^^PCI0.SEC0.PMES == One))
+                 {
+                     ^^PCI0.SEC0.PMEE = Zero
+-                    Local0 = ^^PCI0.SEC0.PMEE /* \_SB_.PCI0.SEC0.PMEE */
+                     Notify (^^PCI0.SEC0, 0x02) // Device Wake
+                 }
+ 
+@@ -20571,7 +20573,7 @@
+                 GPO3, 
+                 GPO0
+             })
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -20616,7 +20618,7 @@
+                 GPO3, 
+                 GPO1
+             })
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (RBUF, ResourceTemplate ()
+                 {
+@@ -20782,7 +20784,7 @@
+ 
+             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+             {
+-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
++                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                 If ((Arg0 == ToUUID ("ac340cb7-e901-45bf-b7e6-2b34ec931e23")))
+                 {
+                     If ((Arg2 == Zero))
+@@ -20792,16 +20794,16 @@
+ 
+                     While (One)
+                     {
+-                        _T_0 = Arg2
+-                        If ((_T_0 == One))
++                        T_0 = Arg2
++                        If ((T_0 == One))
+                         {
+                             MOFF ()
+                         }
+-                        ElseIf ((_T_0 == 0x02))
++                        ElseIf ((T_0 == 0x02))
+                         {
+                             MDON ()
+                         }
+-                        ElseIf ((_T_0 == 0x03))
++                        ElseIf ((T_0 == 0x03))
+                         {
+                             MRST ()
+                         }
+@@ -20809,10 +20811,7 @@
+                         Break
+                     }
+                 }
+-                Else
+-                {
+-                    Return (Zero)
+-                }
++                Return (Zero)
+             }
+         }
+ 
+@@ -20871,7 +20870,7 @@
+                     I2C7, 
+                     GPO1
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -21359,7 +21358,7 @@
+                     }
+                 }
+ 
+-                Method (_AEI, 0, NotSerialized)  // _AEI: ACPI Event Interrupts
++                Method (_AEI, 0, Serialized)  // _AEI: ACPI Event Interrupts
+                 {
+                     Name (RBUF, ResourceTemplate ()
+                     {
+@@ -21421,7 +21420,7 @@
+                     I2C7, 
+                     GPO1
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -21848,7 +21847,7 @@
+                     G12T,   1
+                 }
+ 
+-                Method (_AEI, 0, NotSerialized)  // _AEI: ACPI Event Interrupts
++                Method (_AEI, 0, Serialized)  // _AEI: ACPI Event Interrupts
+                 {
+                     Name (RBUF, ResourceTemplate ()
+                     {
+@@ -21918,7 +21917,7 @@
+                     MBID
+                 })
+                 Name (ACDC, One)
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -22642,7 +22641,7 @@
+                     }
+                 }
+ 
+-                Method (_AEI, 0, NotSerialized)  // _AEI: ACPI Event Interrupts
++                Method (_AEI, 0, Serialized)  // _AEI: ACPI Event Interrupts
+                 {
+                     Name (HBUF, ResourceTemplate ()
+                     {
+@@ -22676,6 +22675,7 @@
+                     {
+                         Return (WBUF) /* \_SB_.PCI0.I2C7.PMI5._AEI.WBUF */
+                     }
++                    Return (WBUF) /* \_SB_.PCI0.I2C7.PMI5._AEI.WBUF */
+                 }
+ 
+                 Method (_E12, 0, NotSerialized)  // _Exx: Edge-Triggered GPE
+@@ -22683,7 +22683,7 @@
+                     If ((BDID == 0x08))
+                     {
+                         Sleep (0x0384)
+-                        If (CondRefOf (\_SB.PCI0.I2C7.BATC, Local1))
++                        If (CondRefOf (\_SB.PCI0.I2C7.BATC))
+                         {
+                             Local0 = GET (One, 0x6E, 0x1E)
+                             Local0 >>= 0x03
+@@ -22704,7 +22704,7 @@
+                                     ADBG ("PINTC")
+                                 }
+ 
+-                                If (CondRefOf (\_SB.DPTF, Local3))
++                                If (CondRefOf (\_SB.DPTF))
+                                 {
+                                     If ((One == Local0))
+                                     {
+@@ -22871,7 +22871,7 @@
+                 {
+                     I2C7
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -22925,7 +22925,7 @@
+                     I2C7, 
+                     GPO1
+                 })
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -23608,7 +23608,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -23645,7 +23645,7 @@
+                     Return (Zero)
+                 }
+ 
+-                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++                Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+                 {
+                     Name (SBUF, ResourceTemplate ()
+                     {
+@@ -24517,7 +24517,7 @@
+                 ^PCI0.I2C7, 
+                 ^PCI0.I2C7.PMI5
+             })
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (CBUF, ResourceTemplate ()
+                 {
+@@ -24648,6 +24648,7 @@
+                         Return (FBUF) /* \_SB_.BTNS._CRS.FBUF */
+                     }
+                 }
++                Return (CBUF) /* \_SB_.BTNS._CRS.CBUF */
+             }
+ 
+             Method (_STA, 0, NotSerialized)  // _STA: Status
+@@ -24742,7 +24743,7 @@
+                 ^PCI0.I2C7, 
+                 ^PCI0.I2C7.PMI5
+             })
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (CBUF, ResourceTemplate ()
+                 {
+@@ -24877,6 +24878,8 @@
+                 {
+                     Return (WBUF) /* \_SB_.TBAD._CRS.WBUF */
+                 }
++                
++                Return (CBUF) /* \_SB_.TBAD._CRS.CBUF */
+             }
+ 
+             Method (_STA, 0, NotSerialized)  // _STA: Status
+@@ -24891,7 +24894,7 @@
+ 
+             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+             {
+-                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
++                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                 Debug = "Method _DSM for Button Device"
+                 If ((PMID == Zero))
+                 {
+@@ -24909,15 +24912,15 @@
+                 {
+                     While (One)
+                     {
+-                        _T_0 = ToInteger (Arg2)
+-                        If ((_T_0 == Zero))
++                        T_0 = ToInteger (Arg2)
++                        If ((T_0 == Zero))
+                         {
+                             Return (Buffer (One)
+                             {
+                                  0x03                                             /* . */
+                             })
+                         }
+-                        ElseIf ((_T_0 == One))
++                        ElseIf ((T_0 == One))
+                         {
+                             Return (0x07)
+                         }
+@@ -25351,7 +25354,7 @@
+             {
+                 ADBG ("SBTP BMDR")
+                 Notify (ADP1, 0x80) // Status Change
+-                If (CondRefOf (\_SB.DPTF, Local3))
++                If (CondRefOf (\_SB.DPTF))
+                 {
+                     ADBG ("SBTP Notify DPTF")
+                     Notify (DPTF, 0x86) // Device-Specific
+@@ -25522,9 +25525,8 @@
+                     {
+                         Return (One)
+                     }
+-
+-                    Return (0xFFFFFFFF)
+                 }
++                Return (0xFFFFFFFF)
+             }
+ 
+             Method (PSRC, 0, NotSerialized)
+@@ -25749,7 +25751,7 @@
+             {
+                 ADBG ("SBTP TIDR")
+                 Notify (ADP1, 0x80) // Status Change
+-                If (CondRefOf (\_SB.DPTF, Local3))
++                If (CondRefOf (\_SB.DPTF))
+                 {
+                     ADBG ("SBTP Notify DPTF")
+                     Notify (DPTF, 0x86) // Device-Specific
+@@ -25851,9 +25853,8 @@
+                     {
+                         Return (Zero)
+                     }
+-
+-                    Return (0xFFFFFFFF)
+                 }
++                Return (0xFFFFFFFF)
+             }
+ 
+             Method (PSRC, 0, NotSerialized)
+@@ -26026,7 +26027,7 @@
+                 Return (Zero)
+             }
+ 
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (SBUF, ResourceTemplate ()
+                 {
+@@ -26049,7 +26050,7 @@
+         {
+             Name (_HID, "PI330532")  // _HID: Hardware ID
+             Name (_UID, Zero)  // _UID: Unique ID
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (SBUF, ResourceTemplate ()
+                 {
+@@ -26508,7 +26509,7 @@
+                     {
+                         Local1 = WRD1 /* \_SB_.PCI0.I2C1.BATC.WRD1 */
+                         Local2 = (Local1 * 0x05)
+-                        Divide (Local2, FGDV, Local0, Local1)
++                        Divide (Local2, FGDV, , Local1)
+                         BIXP [0x03] = Local1
+                     }
+ 
+@@ -26516,16 +26517,16 @@
+                     If ((BSTS != One))
+                     {
+                         Local1 = WRD1 /* \_SB_.PCI0.I2C1.BATC.WRD1 */
+-                        Divide (Local1, 0x64, Local0, Local2)
++                        Divide (Local1, 0x64, , Local2)
+                         BIXP [0x08] = Local2
+                     }
+                 }
+ 
+                 BIXP [0x02] = DSCP /* \_SB_.PCI0.I2C1.BATC.DSCP */
+                 BIXP [0x05] = DSVO /* \_SB_.PCI0.I2C1.BATC.DSVO */
+-                Divide (DSCP, 0x0A, Local0, Local1)
++                Divide (DSCP, 0x0A, , Local1)
+                 BIXP [0x06] = Local1
+-                Divide (DSCP, 0x14, Local0, Local1)
++                Divide (DSCP, 0x14, , Local1)
+                 BIXP [0x07] = Local1
+                 Return (BIXP) /* \_SB_.PCI0.I2C1.BATC.BIXP */
+             }
+@@ -26857,7 +26858,7 @@
+ 
+                 If ((BSTS != One))
+                 {
+-                    Local1 = WRD1 /* \_SB_.PCI0.I2C1.BATC.WRD1 */
++
+                 }
+ 
+                 Return (One)
+@@ -27230,13 +27231,16 @@
+     Scope (_SB.PCI0.I2C7)
+     {
+         Name (AVBL, Zero)
++        /*
+         Method (_REG, 2, NotSerialized)  // _REG: Region Availability
+         {
+             If ((Arg0 == 0x09))
+             {
+                 AVBL = Arg1
+             }
++            Return (0x00)
+         }
++        */
+ 
+         Device (WIDR)
+         {
+@@ -27376,7 +27380,7 @@
+             Method (SBTP, 0, NotSerialized)
+             {
+                 ADBG ("SBTP WIDR")
+-                If (CondRefOf (\_SB.PCI0.I2C7.WIDR, Local1))
++                If (CondRefOf (\_SB.PCI0.I2C7.WIDR))
+                 {
+                     Local0 = ^^PMI5.GET (One, 0x6E, 0x1E)
+                     Local0 >>= 0x03
+@@ -27387,7 +27391,7 @@
+                     }
+                 }
+ 
+-                If (CondRefOf (\_SB.DPTF, Local3))
++                If (CondRefOf (\_SB.DPTF))
+                 {
+                     ADBG ("SBTP NOTIFY DPTF 86")
+                     Notify (DPTF, 0x86) // Device-Specific
+@@ -27427,7 +27431,7 @@
+                 ADBG ("PSOC")
+                 If ((AVBL == One))
+                 {
+-                    Local1 = WIDR /* \_SB_.PCI0.I2C7.WIDR */
++                    Local1 = SOC /* \_SB_.PCI0.I2C7.WIDR.SOC */
+                     Return (Local1)
+                 }
+ 
+@@ -27494,9 +27498,8 @@
+                     {
+                         Return (Zero)
+                     }
+-
+-                    Return (0xFFFFFFFF)
+                 }
++                Return (0xFFFFFFFF)
+             }
+ 
+             Method (PSRC, 0, NotSerialized)
+@@ -27554,6 +27557,7 @@
+                 {
+                     ^^^^GPO3.FGGP = Local0
+                 }
++                if(Arg0){}
+             }
+ 
+             Method (USBH, 1, Serialized)
+@@ -27702,7 +27706,7 @@
+                 0x61A8, 
+                 One, 
+                 One, 
+-                "SR Real Battery", 
++                "SR Real Battery lol", 
+                 "123456789", 
+                 "LION", 
+                 "Intel SR 1"
+@@ -27723,7 +27727,7 @@
+                     {
+                         Local1 = WRD1 /* \_SB_.PCI0.I2C7.BATC.WRD1 */
+                         Local2 = (Local1 * 0x05)
+-                        Divide (Local2, FGDV, Local0, Local1)
++                        Divide (Local2, FGDV, , Local1)
+                         BIXP [0x03] = Local1
+                     }
+ 
+@@ -27731,21 +27735,21 @@
+                     If ((BSTS != One))
+                     {
+                         Local1 = WRD1 /* \_SB_.PCI0.I2C7.BATC.WRD1 */
+-                        Divide (Local1, 0x64, Local0, Local2)
++                        Divide (Local1, 0x64, , Local2)
+                         BIXP [0x08] = Local2
+                     }
+                 }
+ 
+                 BIXP [0x02] = DSCP /* \_SB_.PCI0.I2C7.BATC.DSCP */
+                 BIXP [0x05] = DSVO /* \_SB_.PCI0.I2C7.BATC.DSVO */
+-                Divide (DSCP, 0x0A, Local0, Local1)
++                Divide (DSCP, 0x0A, , Local1)
+                 BIXP [0x06] = Local1
+-                Divide (DSCP, 0x14, Local0, Local1)
++                Divide (DSCP, 0x14, , Local1)
+                 BIXP [0x07] = Local1
+                 Return (BIXP) /* \_SB_.PCI0.I2C7.BATC.BIXP */
+             }
+ 
+-            Method (_BST, 0, NotSerialized)  // _BST: Battery Status
++            Method (_BST, 0, Serialized)  // _BST: Battery Status
+             {
+                 Name (RGND, One)
+                 If ((^^PMI5.AVBL == One))
+@@ -27936,7 +27940,7 @@
+                 Return (BSTP) /* \_SB_.PCI0.I2C7.BATC.BSTP */
+             }
+ 
+-            Method (INTC, 0, NotSerialized)
++            Method (INTC, 0, Serialized)
+             {
+                 ADBG ("INTC")
+                 Name (RGND, One)
+@@ -28551,7 +28555,7 @@
+                 If ((BDID == 0x08))
+                 {
+                     ADBG ("ADP1 _PSR FFD")
+-                    If (CondRefOf (\_SB.PCI0.I2C7.BATC, Local1))
++                    If (CondRefOf (\_SB.PCI0.I2C7.BATC))
+                     {
+                         Local0 = ^^PCI0.I2C7.BATC.PSRC ()
+                         If ((Local0 == Zero))
+@@ -28570,7 +28574,7 @@
+                 If (((BDID == 0x09) || (BDID == 0x0A)))
+                 {
+                     ADBG ("ADP1 _PSR FFD HR")
+-                    If (CondRefOf (\_SB.PCI0.I2C7.WIDR, Local1))
++                    If (CondRefOf (\_SB.PCI0.I2C7.WIDR))
+                     {
+                         Local0 = ^^PCI0.I2C7.WIDR.PSRC ()
+                         If ((Local0 == Zero))
+@@ -28591,7 +28595,7 @@
+                     ADBG ("ADP1 _PSR CHTCR")
+                     If ((PMID == 0x02))
+                     {
+-                        If (CondRefOf (\_SB.PCI0.I2C7.BMDR, Local1))
++                        If (CondRefOf (\_SB.PCI0.I2C7.BMDR))
+                         {
+                             Local0 = ^^PCI0.I2C7.BMDR.PSRC ()
+                             If ((Local0 == Zero))
+@@ -28606,7 +28610,7 @@
+                             }
+                         }
+                     }
+-                    ElseIf (CondRefOf (\_SB.PCI0.I2C3.TIDR, Local1))
++                    ElseIf (CondRefOf (\_SB.PCI0.I2C3.TIDR))
+                     {
+                         Local0 = ^^PCI0.I2C3.TIDR.PSRC ()
+                         If ((Local0 == Zero))
+@@ -28621,7 +28625,7 @@
+                         }
+                     }
+                 }
+-                ElseIf (CondRefOf (\_SB.PCI0.I2C1.BATC, Local1))
++                ElseIf (CondRefOf (\_SB.PCI0.I2C1.BATC))
+                 {
+                     Local0 = ^^PCI0.I2C1.BATC.PSRC ()
+                     If ((Local0 == Zero))
+@@ -28700,7 +28704,7 @@
+             Name (CPU, "CherryView")
+             Name (MDMN, "XMM_7260")
+             Name (CONF, "XMM7260_CONF_3")
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (UBUF, ResourceTemplate ()
+                 {
+@@ -28768,7 +28772,7 @@
+             Name (CPU, "CherryView")
+             Name (MDMN, "XMM_7260")
+             Name (CONF, "XMM7260_CONF_7")
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (UBUF, ResourceTemplate ()
+                 {
+@@ -28836,7 +28840,7 @@
+             Name (CPU, "CherryView")
+             Name (MDMN, "XMM_7160")
+             Name (CONF, "XMM7160_CONF_9")
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (UBUF, ResourceTemplate ()
+                 {
+@@ -28904,7 +28908,7 @@
+             Name (CPU, "CherryView")
+             Name (MDMN, "XMM_7260")
+             Name (CONF, "XMM7260_CONF_13")
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (UBUF, ResourceTemplate ()
+                 {
+@@ -29014,7 +29018,7 @@
+                 Return (0x0F)
+             }
+ 
+-            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
++            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+             {
+                 Name (UBUF, ResourceTemplate ()
+                 {
+@@ -29103,6 +29107,7 @@
+ 
+     Method (WAK, 1, NotSerialized)
+     {
++    	If (Arg0) {}
+     }
+ }
+ 
