@@ -1,0 +1,13 @@
+--- a/drivers/i2c/busses/i2c-designware-baytrail.c	2016-09-06 20:59:54.849427360 +0200
++++ b/drivers/i2c/busses/i2c-designware-baytrail.c	2016-10-23 12:46:05.019061437 +0200
+@@ -22,8 +22,9 @@
+ #include "i2c-designware-core.h"
+ 
+ #define SEMAPHORE_TIMEOUT	100
+-#define PUNIT_SEMAPHORE		0x7
+-#define PUNIT_SEMAPHORE_BIT	BIT(1)
++/*Semaphore registry is 0x7 for baytrail, 0x10E for cherrytrail*/
++#define PUNIT_SEMAPHORE		0x10E
++#define PUNIT_SEMAPHORE_BIT	BIT(0)
+ #define PUNIT_SEMAPHORE_ACQUIRE	BIT(1)
+
