@@ -1,0 +1,24 @@
+H/W path         Device  Class       Description
+================================================
+                         system      CherryTrail (Type1 - SKU0)
+/0                       bus         Type2 - Board Product Name
+/0/0                     memory      64KiB BIOS
+/0/4                     processor   Intel(R) Atom(TM) x5-Z8300  CPU @ 1.44GHz
+/0/4/6                   memory      32KiB L1 cache
+/0/4/7                   memory      1MiB L2 cache
+/0/5                     memory      24KiB L1 cache
+/0/17                    memory      4GiB System Memory
+/0/17/0                  memory      4GiB DIMM DDR3 Synchronous 1600 MHz (0,6 ns)
+/0/100                   bridge      Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series SoC Transaction Register
+/0/100/2                 display     Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series PCI Configuration Registers
+/0/100/3                 multimedia  Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series Imaging Unit
+/0/100/b                 generic     Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series Power Management Controller
+/0/100/14                bus         Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series USB xHCI Controller
+/0/100/14/0      usb1    bus         xHCI Host Controller
+/0/100/14/0/4            bus         USB 2.0 Hub
+/0/100/14/0/4/2          input       Keyboard
+/0/100/14/1      usb2    bus         xHCI Host Controller
+/0/100/1a                generic     Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series Trusted Execution Engine
+/0/100/1f                bridge      Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series PCU
+/1                       power       SR Real Battery
+/2                       power       OEM Define 5
