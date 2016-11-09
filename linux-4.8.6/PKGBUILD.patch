@@ -1,0 +1,48 @@
+--- a/PKGBUILD	2016-11-08 19:31:21.926420892 +0100
++++ b/PKGBUILD	2016-11-09 19:52:41.430180175 +0100
+@@ -2,7 +2,7 @@
+ # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+ # Maintainer: Thomas Baechler <thomas@archlinux.org>
+ 
+-pkgbase=linux               # Build stock -ARCH kernel
++pkgbase=linux-cherry               # Build stock -ARCH kernel
+ #pkgbase=linux-custom       # Build kernel with a different name
+ _srcname=linux-4.8
+ pkgver=4.8.6
+@@ -21,6 +21,8 @@
+         # standard config files for mkinitcpio ramdisk
+         'linux.preset'
+         'change-default-console-loglevel.patch'
++        'i2c_designware_cherrytrail.patch'
++        'speedy_touchpad.patch'
+         )
+ 
+ sha256sums=('3e9150065f193d3d94bcf46a1fe9f033c7ef7122ab71d75a7fb5a2f0c9a7e11a'
+@@ -28,9 +30,11 @@
+             '3ac0ea443ac8a7aa40f8d5ce8ec33b84abbad4dbfc567c7699df728c2c21df37'
+             'SKIP'
+             '2ac8818414beb7dbacbd3ad450c516e6ada804827132a7132f63b8189e5f5151'
+-            '93a4ad4f6c7bb9296fddec436ed7477a5a5c11cf4d6e68482fa6610442cbcb1f'
+-            'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
+-            '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
++            'SKIP'
++            'SKIP'
++            '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99'
++            'SKIP'
++            'SKIP')
+ validpgpkeys=(
+               'ABAF11C65A2970B130ABE3C479BE3E4300411886' # Linus Torvalds
+               '647F28654894E3BD457199BE38DBBDC86092693E' # Greg Kroah-Hartman
+@@ -68,6 +72,12 @@
+ 
+   # don't run depmod on 'make install'. We'll do this ourselves in packaging
+   sed -i '2iexit 0' scripts/depmod.sh
++  
++  
++  # add custom patches
++  patch -p1 -i "${srcdir}/speedy_touchpad.patch"
++  patch -p1 -i "${srcdir}/i2c_designware_cherrytrail.patch"
++  
+ 
+   # get kernel version
+   make prepare

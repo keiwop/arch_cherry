@@ -1,0 +1,28 @@
+--- a/drivers/hid/hid-ids.h	2016-07-24 21:23:50.000000000 +0200
++++ b/drivers/hid/hid-ids.h	2016-09-03 17:23:37.127555133 +0200
+@@ -898,6 +898,9 @@
+ #define USB_DEVICE_ID_SOUNDGRAPH_IMON_FIRST	0x0034
+ #define USB_DEVICE_ID_SOUNDGRAPH_IMON_LAST	0x0046
+ 
++#define USB_VENDOR_ID_SPEEDY 	0x1017
++#define USB_DEVICE_ID_SPEEDY_TOUCHPAD 	0x1006
++
+ #define USB_VENDOR_ID_STANTUM		0x1f87
+ #define USB_DEVICE_ID_MTP		0x0002
+
+
+ 
+--- a/drivers/hid/hid-multitouch.c	2016-07-24 21:23:50.000000000 +0200
++++ b/drivers/hid/hid-multitouch.c	2016-09-03 17:27:34.720901267 +0200
+@@ -1433,6 +1433,11 @@
+ 	{ .driver_data = MT_CLS_CONFIDENCE_CONTACT_ID,
+ 		MT_USB_DEVICE(USB_VENDOR_ID_QUANTA,
+ 			USB_DEVICE_ID_QUANTA_OPTICAL_TOUCH_3001) },
++	
++	/* Speedy touchpad panel */
++	{  .driver_data = MT_CLS_EXPORT_ALL_INPUTS,
++		HID_DEVICE(HID_BUS_ANY, HID_GROUP_MULTITOUCH_WIN_8,
++			USB_VENDOR_ID_SPEEDY, USB_DEVICE_ID_SPEEDY_TOUCHPAD) },
+ 
+ 	/* Stantum panels */
+ 	{ .driver_data = MT_CLS_CONFIDENCE,
